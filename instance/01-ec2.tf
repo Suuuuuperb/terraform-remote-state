@@ -9,9 +9,14 @@ data "terraform_remote_state" "remote_state" {
   }
 }
 
+output "remote_state_output" {
+  value       = data.terraform_remote_state.remote_state
+  description = "The Private_ip of the Instance"
+}
+
 resource "aws_security_group" "resource-tagging-lab-kthong" {
   name = "resource-tagging-lab-kthong"
-  vpc_id = data.terraform_remote_state.remote_state.outputs.aws_vpc.vpc_kthong.id
+  vpc_id = data.terraform_remote_state.remote_state.resources.aws_vpc.vpc_kthong.id
 }
 
 # Terraform >= 0.12
