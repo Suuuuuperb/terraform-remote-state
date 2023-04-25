@@ -16,7 +16,7 @@ output "remote_state_output" {
 
 resource "aws_security_group" "resource-tagging-lab-kthong" {
   name = "resource-tagging-lab-kthong"
-  vpc_id = data.terraform_remote_state.remote_state.resources.aws_vpc.vpc_kthong.id
+  vpc_id = data.terraform_remote_state.remote_state.resource.aws_vpc.vpc_kthong.id
 }
 
 # Terraform >= 0.12
