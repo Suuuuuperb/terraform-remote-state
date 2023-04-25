@@ -8,6 +8,11 @@ resource "aws_subnet" "private-ap-southeast-2a" {
   }
 }
 
+output "output_aws_subnet_private_2a_kthong" {
+  value       = aws_subnet.private-ap-southeast-2a
+  description = "aws_subnet.private-ap-southeast-2a"
+}
+
 resource "aws_subnet" "private-ap-southeast-2b" {
   vpc_id = aws_vpc.vpc_kthong.id
   cidr_block = "10.0.32.0/19"
@@ -16,6 +21,11 @@ resource "aws_subnet" "private-ap-southeast-2b" {
   tags = {
     "Name" = "private-ap-southeast-2b"
   }
+}
+
+output "output_aws_subnet_private_2b_kthong" {
+  value       = aws_subnet.private-ap-southeast-2b
+  description = "private-ap-southeast-2b"
 }
 
 resource "aws_subnet" "public-ap-southeast-2a" {
@@ -29,6 +39,11 @@ resource "aws_subnet" "public-ap-southeast-2a" {
     }
 }
 
+output "output_aws_subnet_public_2a_kthong" {
+  value       = aws_subnet.public-ap-southeast-2a
+  description = "public-ap-southeast-2a"
+}
+
 resource "aws_subnet" "public-ap-southeast-2b" {
     vpc_id = aws_vpc.vpc_kthong.id
     cidr_block = "10.0.96.0/19"
@@ -38,4 +53,9 @@ resource "aws_subnet" "public-ap-southeast-2b" {
     tags = {
         "Name" = "public-ap-southeast-2b"
     }
+}
+
+output "output_aws_subnet_public_2b_kthong" {
+  value       = aws_subnet.public-ap-southeast-2b
+  description = "public-ap-southeast-2b"
 }

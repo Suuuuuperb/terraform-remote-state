@@ -11,5 +11,5 @@ resource "aws_vpc" "vpc_kthong" {
 
 output "output_vpc_kthong" {
   value       = aws_vpc.vpc_kthong
-  description = "The Private_ip of the Instance"
+  description = "aws_vpc.vpc_kthong"
 }

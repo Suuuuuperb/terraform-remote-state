@@ -5,3 +5,8 @@ resource "aws_internet_gateway" "igw" {
     "Name" = "igw"
   }
 }
+
+output "output_igw_kthong" {
+  value       = aws_internet_gateway.igw
+  description = "aws_internet_gateway.igw"
+}
